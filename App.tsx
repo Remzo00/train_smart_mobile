@@ -1,21 +1,17 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { View } from "react-native";
+import Button from "./components/Button";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Test</Text>
-      <StatusBar style="auto" />
+    <View>
+      <Button
+        text={"Neki tekst"}
+        onPress={function (): void {
+          throw new Error("Function not implemented.");
+        }}
+        color="blue"
+      />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
