@@ -1,7 +1,8 @@
 import React from "react";
-import SignUp from "./screens/SignUp";
-import Login from "./screens/Login";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Auth from "./screens/Auth";
 
 export default function App() {
-  return <Login />;
+  const Stack = createNativeStackNavigator();
+  return <Auth />;
 }
