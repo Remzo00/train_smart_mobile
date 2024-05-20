@@ -34,7 +34,7 @@ const SignUp = () => {
         <View>
           <Text>Last Name</Text>
           <InputField
-            value={firstName}
+            value={lastName}
             placeholder="Enter your first name"
             onChange={setLastName}
           />
