@@ -6,6 +6,11 @@ export const Container = styled.View`
     background-color: white;
 `;
 
+export const Logo = styled.Image`
+  width: 100%;
+  height: 200px;
+`
+
 export const Title = styled.Text`
     font-size: 32px;
     font-weight: bold;

@@ -10,7 +10,7 @@ import {
 import { Picker } from "@react-native-picker/picker";
 import InputField from "../InputField";
 import Button from "../Button";
-import { Container, Title, Subtitle } from "./index.styeld";
+import { Container, Title, Subtitle, Logo } from "./index.styeld";
 
 interface SignUpProps {
   setAuthScreen: React.Dispatch<React.SetStateAction<"login" | "signup">>;
@@ -29,10 +29,7 @@ export default function SignUp({ setAuthScreen }: SignUpProps) {
     <SafeAreaView>
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         <Container>
-          <Image
-            source={{ uri: "https://via.placeholder.com/150" }}
-            style={{ width: "100%", height: 200 }}
-          />
+          <Logo source={{ uri: "https://via.placeholder.com/500" }} />
           <Title>Sign up</Title>
           <Subtitle>Join our gym community</Subtitle>
           <View>
