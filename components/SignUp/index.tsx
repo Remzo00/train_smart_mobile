@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
   ScrollView,
-  Image,
   View,
   Text,
   TouchableOpacity,

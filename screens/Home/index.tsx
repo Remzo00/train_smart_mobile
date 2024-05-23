@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Title } from "./index.styled";
-import { SafeAreaView, ScrollView } from "react-native";
+import { ScrollView } from "react-native";
 import ExerciseCard from "../../components/ExerciseCard";
 import Button from "../../components/Button";
 import { StackNavigationProp } from "@react-navigation/stack";

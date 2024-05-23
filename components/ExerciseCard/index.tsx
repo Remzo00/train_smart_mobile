@@ -1,6 +1,5 @@
 import React from "react";
 import { Card, CardTitle, CardText } from "./index.styled";
-import { SafeAreaView } from "react-native";
 
 interface ExerciseCardProps {
   title: string;
