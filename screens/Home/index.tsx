@@ -41,6 +41,7 @@ const Home = ({ navigation }: HomeProps) => {
         text={"Add exercise"}
         onPress={() => navigation.navigate("addExercise")}
       />
+      <Button text={"Profile"} onPress={() => navigation.navigate("profile")} />
       <ScrollView>
         {exercises.map((exercise) => (
           <ExerciseCard key={exercise.title} {...exercise} />

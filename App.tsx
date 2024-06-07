@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "./screens/Home";
 import { NavigationContainer } from "@react-navigation/native";
 import AddExercise from "./screens/AddExercise";
+import Profile from "./screens/Profile";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -15,7 +16,6 @@ export default function App() {
           options={{
             title: "Home Page",
             headerShown: false,
-            gestureEnabled: false,
           }}
         />
         <Stack.Screen
@@ -23,6 +23,14 @@ export default function App() {
           component={AddExercise}
           options={{
             title: "Add Exercise",
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="profile"
+          component={Profile}
+          options={{
+            title: "Profile",
             headerShown: false,
           }}
         />
