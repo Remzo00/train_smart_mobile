@@ -18,7 +18,14 @@ export default function App() {
             gestureEnabled: false,
           }}
         />
-        <Stack.Screen name="addExercise" component={AddExercise} />
+        <Stack.Screen
+          name="addExercise"
+          component={AddExercise}
+          options={{
+            title: "Add Exercise",
+            headerShown: false,
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
