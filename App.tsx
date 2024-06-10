@@ -4,37 +4,18 @@ import Home from "./screens/Home";
 import { NavigationContainer } from "@react-navigation/native";
 import AddExercise from "./screens/AddExercise";
 import Profile from "./screens/Profile";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import { RootStackParamList } from "./types";
 
+const Drawer = createDrawerNavigator<RootStackParamList>();
 export default function App() {
-  const Stack = createNativeStackNavigator();
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="home"
-          component={Home}
-          options={{
-            title: "Home Page",
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
-          name="addExercise"
-          component={AddExercise}
-          options={{
-            title: "Add Exercise",
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
-          name="profile"
-          component={Profile}
-          options={{
-            title: "Profile",
-            headerShown: false,
-          }}
-        />
-      </Stack.Navigator>
+      <Drawer.Navigator initialRouteName="home">
+        <Drawer.Screen name="home" component={Home} />
+        <Drawer.Screen name="addExercise" component={AddExercise} />
+        <Drawer.Screen name="profile" component={Profile} />
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 }

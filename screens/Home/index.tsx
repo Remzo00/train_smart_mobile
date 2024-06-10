@@ -1,12 +1,14 @@
 import React from "react";
 import { Container, Title } from "./index.styled";
-import { ScrollView } from "react-native";
+import { SafeAreaView, ScrollView } from "react-native";
 import ExerciseCard from "../../components/ExerciseCard";
 import Button from "../../components/Button";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RootStackParamList } from "../../types";
+import CustomHeader from "../../components/Header";
+import { DrawerNavigationProp } from "@react-navigation/drawer";
 
-type ExerciseScreenNavigationProp = StackNavigationProp<
+type ExerciseScreenNavigationProp = DrawerNavigationProp<
   RootStackParamList,
   "home"
 >;
@@ -35,19 +37,23 @@ const exercises = [
 
 const Home = ({ navigation }: HomeProps) => {
   return (
-    <Container>
-      <Title>View exercises</Title>
-      <Button
-        text={"Add exercise"}
-        onPress={() => navigation.navigate("addExercise")}
-      />
-      <Button text={"Profile"} onPress={() => navigation.navigate("profile")} />
-      <ScrollView>
-        {exercises.map((exercise) => (
-          <ExerciseCard key={exercise.title} {...exercise} />
-        ))}
-      </ScrollView>
-    </Container>
+    <>
+      <Container>
+        <CustomHeader title={"View exercises"} navigation={navigation} />
+        <Button
+          text={"Add exercise"}
+          onPress={() => {
+            console.log("Navigating to addExercise screen...");
+            navigation.navigate("addExercise");
+          }}
+        />
+        <ScrollView>
+          {exercises.map((exercise) => (
+            <ExerciseCard key={exercise.title} {...exercise} />
+          ))}
+        </ScrollView>
+      </Container>
+    </>
   );
 };
 

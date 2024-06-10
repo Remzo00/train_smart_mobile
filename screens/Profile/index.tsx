@@ -11,8 +11,10 @@ import { StackNavigationProp } from "@react-navigation/stack";
 import { RootStackParamList } from "../../types";
 import InputField from "../../components/InputField";
 import Button from "../../components/Button";
+import CustomHeader from "../../components/Header";
+import { DrawerNavigationProp } from "@react-navigation/drawer";
 
-type ExerciseScreenNavigationProp = StackNavigationProp<
+type ExerciseScreenNavigationProp = DrawerNavigationProp<
   RootStackParamList,
   "profile"
 >;
@@ -24,7 +26,7 @@ const Profile = ({ navigation }: ProfileProps) => {
   return (
     <SafeAreaView>
       <ScrollView>
-        <Title>Profile</Title>
+        <CustomHeader title={"Profile"} navigation={navigation} />
         <Container>
           <Label>First Name</Label>
           <InputField

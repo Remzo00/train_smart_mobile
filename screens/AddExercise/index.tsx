@@ -8,11 +8,24 @@ import {
 } from "./index.styled";
 import InputField from "../../components/InputField";
 import Button from "../../components/Button";
+import CustomHeader from "../../components/Header";
+import { SafeAreaView } from "react-native";
+import { DrawerNavigationProp } from "@react-navigation/drawer";
+import { RootStackParamList } from "../../types";
 
-const AddExercise = () => {
+type ExerciseScreenNavigationProp = DrawerNavigationProp<
+  RootStackParamList,
+  "addExercise"
+>;
+
+interface AddExerciseProps {
+  navigation: ExerciseScreenNavigationProp;
+}
+
+const AddExercise = ({ navigation }: AddExerciseProps) => {
   return (
-    <>
-      <Title>Add Exercise</Title>
+    <SafeAreaView>
+      <CustomHeader title={"Add Exercise"} navigation={navigation} />
       <Container>
         <Label>Exercise Name</Label>
         <InputField
@@ -48,7 +61,7 @@ const AddExercise = () => {
           }}
         />
       </Container>
-    </>
+    </SafeAreaView>
   );
 };
 
